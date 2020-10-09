@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SSPractice:jar">
+    <output-path>$USER_HOME$/OneDrive/Bureau/Sandbox Server/plugins</output-path>
+    <root id="archive" name="SSPractice.jar">
+      <element id="module-output" name="SSPractice" />
+    </root>
+  </artifact>
+</component>

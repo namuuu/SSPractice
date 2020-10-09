@@ -1,0 +1,7 @@
+name: SSPractice
+version: 1.0
+author: Namu
+main: fr.namu.pr.MainPR
+commands:
+  party:
+    aliases: p
