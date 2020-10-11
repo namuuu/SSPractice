@@ -11,11 +11,11 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/OneDrive/Bureau/Sandbox Server/spigot.jar!/" />
+          <root url="jar://$USER_HOME$/Desktop/Test Server 1.8/Spigot-1.8.8.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$USER_HOME$/OneDrive/Bureau/Sandbox Server/spigot.jar!/" />
+          <root url="jar://$USER_HOME$/Desktop/Test Server 1.8/Spigot-1.8.8.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

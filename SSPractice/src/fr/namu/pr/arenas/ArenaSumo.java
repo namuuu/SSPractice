@@ -18,10 +18,8 @@ public class ArenaSumo {
     private MapPR map;
 
     public List<Player> team1 = new ArrayList<>();
-    public List<Player> team2 = new ArrayList<>();
 
     private int team1Alive;
-    private int team2Alive;
 
     public ArenaSumo(Location center, MapPR map) {
         this.loc = center;
@@ -45,21 +43,14 @@ public class ArenaSumo {
 
     public void reset() {
         team1.clear();
-        team2.clear();
     }
 
     public void autoResize() {
         team1Alive = 0;
-        team2Alive = 0;
 
         for(Player player : team1) {
             if(!player.getGameMode().equals(GameMode.SPECTATOR)) {
                 team1Alive += 1;
-            }
-        }
-        for(Player player : team2) {
-            if(!player.getGameMode().equals(GameMode.SPECTATOR)) {
-                team2Alive += 1;
             }
         }
     }
@@ -67,14 +58,10 @@ public class ArenaSumo {
     public List<Player> getPlayers() {
         List<Player> list = new ArrayList<>();
         list.addAll(team1);
-        list.addAll(team2);
         return list;
     }
 
     public int getTeam1Alive() {
         return team1Alive;
-    }
-    public int getTeam2Alive() {
-        return team2Alive;
     }
 }

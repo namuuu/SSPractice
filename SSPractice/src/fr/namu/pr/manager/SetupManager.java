@@ -32,6 +32,7 @@ public class SetupManager {
         ArenaManager arena = this.main.arena;
 
         arena.putArenasTvT(new ArenaTvT(new Location(Bukkit.getWorld("world"), 4.5, 31,  -63.5), MapPR.TEST));
+
     }
 
 }

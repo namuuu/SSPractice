@@ -1,5 +1,6 @@
 package fr.namu.pr;
 
+import fr.namu.pr.arenas.ArenaSumo;
 import fr.namu.pr.arenas.ArenaTvT;
 import fr.namu.pr.enumpr.KitPR;
 import fr.namu.pr.enumpr.StatePR;
@@ -15,7 +16,9 @@ public class PlayerPR {
 
 
     private KitPR kit;
+
     private ArenaTvT arena;
+    private ArenaSumo arenaSumo;
 
     private StatePR state;
 
@@ -46,6 +49,13 @@ public class PlayerPR {
     }
     public void setArena(ArenaTvT arena) {
         this.arena = arena;
+    }
+
+    public ArenaSumo getArenaSumo() {
+        return arenaSumo;
+    }
+    public void setArenaSumo(ArenaSumo arenaSumo) {
+        this.arenaSumo = arenaSumo;
     }
 
     public PartyPR getParty() {

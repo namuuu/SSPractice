@@ -6,6 +6,7 @@ import fr.namu.pr.PlayerPR;
 import fr.namu.pr.arenas.ArenaTvT;
 import fr.namu.pr.enumpr.KitPR;
 import fr.namu.pr.enumpr.MapPR;
+import fr.namu.pr.enumpr.MapTypePR;
 import fr.namu.pr.enumpr.StatePR;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -79,7 +80,7 @@ public class MatchMakingManager {
         players.add(player1);
         players.add(player2);
 
-        startTvT(players, kit);
+        this.main.fight.startTvT(players, kit);
     }
 
     public void startPartySplit(List<Player> players, KitPR kit) {
@@ -88,60 +89,16 @@ public class MatchMakingManager {
             return;
         }
 
+        //Si le Kit est SUMO
         if(kit == KitPR.SUMO) {
-
-        }
-
-        startTvT(players, kit);
-    }
-
-    public void startTvT(List<Player> players, KitPR kit) {
-        ArenaTvT arena = this.main.arena.searchArenaTvT();
-
-        if(arena == null) {
+            this.main.fight.startSumo(players, kit);
             return;
         }
 
-        MapPR map = arena.getMap();
-
-        List<Player> players1 = new ArrayList<>();
-        List<Player> players2 = new ArrayList<>();
-        Integer ind = 1;
-
-        for(Player player : players) {
-            if(ind.equals(1)) {
-                players1.add(player);
-                ind = 2;
-            } else {
-                players2.add(player);
-                ind = 1;
-            }
-        }
-
-        for(Player player : players1) {
-            PlayerPR ppr = this.main.playerpr.get(player.getUniqueId());
-            ppr.setOpponents(players2);
-            ppr.setState(StatePR.FIGHT);
-            ppr.setArena(arena);
-            arena.team1 = players1;
-            player.teleport(new Location(arena.getLoc().getWorld(), arena.getLoc().getBlockX() + map.getX1(), arena.getLoc().getBlockY() + map.getY1(), arena.getLoc().getBlockZ() + map.getZ1()));
-            this.main.stuff.giveKitStuff(player, kit);
-        }
-
-        for(Player player : players2) {
-            PlayerPR ppr = this.main.playerpr.get(player.getUniqueId());
-            ppr.setOpponents(players1);
-            ppr.setState(StatePR.FIGHT);
-            ppr.setArena(arena);
-            arena.team2 = players2;
-            player.teleport(new Location(arena.getLoc().getWorld(), arena.getLoc().getBlockX() + map.getX2(), arena.getLoc().getBlockY() + map.getY2(), arena.getLoc().getBlockZ() + map.getZ2()));
-            this.main.stuff.giveKitStuff(player, kit);
-        }
-
-        arena.autoResize();
+        this.main.fight.startTvT(players, kit);
     }
 
-    public void startSumo(List<Player> players, KitPR kit) {
 
-    }
+
+
 }

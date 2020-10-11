@@ -24,7 +24,12 @@ public class ScoreboardPR {
             if(ppr.getState().equals(StatePR.LOBBY)) {
                 lobbyBoard(board);
             } else if (ppr.getState().equals(StatePR.FIGHT)) {
-                fightBoard(board);
+                if(ppr.getArena() != null) {
+                    fightBoard(board);
+                }
+                if(ppr.getArenaSumo() != null) {
+
+                }
             }
         }
     }

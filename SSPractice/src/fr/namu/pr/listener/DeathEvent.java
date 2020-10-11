@@ -65,7 +65,7 @@ public class DeathEvent implements Listener {
                     teamates.sendMessage(" ");
                     teamates.sendMessage("§7§m----------------------");
                 }
-                this.main.fight.endBattle(arena);
+                this.main.fight.endBattleTvT(arena);
             }
         }
         if(arena.team2.contains(player)) {
@@ -100,7 +100,7 @@ public class DeathEvent implements Listener {
                     teamates.sendMessage(" ");
                     teamates.sendMessage("§7§m----------------------");
                 }
-                this.main.fight.endBattle(arena);
+                this.main.fight.endBattleTvT(arena);
             }
         }
     }
