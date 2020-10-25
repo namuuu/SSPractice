@@ -1,10 +1,10 @@
 package fr.namu.pr;
 
-import fr.namu.pr.arenas.ArenaSumo;
-import fr.namu.pr.arenas.ArenaTvT;
-import fr.namu.pr.enumpr.KitPR;
-import fr.namu.pr.enumpr.StatePR;
-import fr.namu.pr.party.PartyPR;
+import fr.namu.pr.arena.Arena;
+import fr.namu.pr.enumpr.Kit;
+import fr.namu.pr.enumpr.Ranks;
+import fr.namu.pr.enumpr.State;
+import fr.namu.pr.party.Party;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -14,56 +14,38 @@ public class PlayerPR {
 
 
 
+    private Kit queuedKit;
+    private Kit kit;
 
-    private KitPR kit;
+    private State state;
 
-    private ArenaTvT arena;
-    private ArenaSumo arenaSumo;
+    private Arena arena;
 
-    private StatePR state;
+    private Ranks rank;
+    private Party party;
 
     private List<Player> opponents = new ArrayList<>();
 
-    private PartyPR party = null;
-
     public PlayerPR() {
-
+        this.queuedKit = null;
+        this.kit = null;
+        this.state = State.LOBBY;
     }
 
-    public KitPR getKit() {
+    public Kit getKit() {
         return kit;
     }
-    public void setKit(KitPR kit) {
+    public void setKit(Kit kit) {
         this.kit = kit;
     }
 
-    public StatePR getState() {
+    public State getState() {
         return state;
     }
-    public void setState(StatePR state) {
+    public void setState(State state) {
         this.state = state;
     }
 
-    public ArenaTvT getArena() {
-        return arena;
-    }
-    public void setArena(ArenaTvT arena) {
-        this.arena = arena;
-    }
-
-    public ArenaSumo getArenaSumo() {
-        return arenaSumo;
-    }
-    public void setArenaSumo(ArenaSumo arenaSumo) {
-        this.arenaSumo = arenaSumo;
-    }
-
-    public PartyPR getParty() {
-        return party;
-    }
-    public void setParty(PartyPR party) {
-        this.party = party;
-    }
 
     public List<Player> getOpponents() {
         return opponents;
@@ -71,4 +53,33 @@ public class PlayerPR {
     public void setOpponents(List<Player> opponents) {
         this.opponents = opponents;
     }
+
+    public Kit getQueuedKit() {
+        return queuedKit;
+    }
+    public void setQueuedKit(Kit queuedKit) {
+        this.queuedKit = queuedKit;
+    }
+
+    public Arena getArena() {
+        return arena;
+    }
+    public void setArena(Arena arena) {
+        this.arena = arena;
+    }
+
+    public Ranks getRank() {
+        return rank;
+    }
+    public void setRank(Ranks rank) {
+        this.rank = rank;
+    }
+
+    public Party getParty() {
+        return party;
+    }
+    public void setParty(Party party) {
+        this.party = party;
+    }
 }
+
